@@ -1,0 +1,19 @@
+version: '3'
+services:
+    upsource:
+        image: jetbrains/upsource:2017.3.2888
+        ports: 
+            - "8080:8080"
+        volumes:
+            - ./upsource/data:/opt/upsource/data
+            - ./upsource/conf:/opt/upsource/conf
+            - ./upsource/logs:/opt/upsource/logs
+            - ./upsource/backups:/opt/upsource/backups
+            
+    jenkins:
+        image: jenkins/jenkins
+        ports:
+            - "8081:8080"
+            - "50000:50000"
+        volumes:
+            - ./jenkins_home:/var/jenkins_home
