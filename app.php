@@ -1,3 +1,7 @@
 <?php
-echo 'hello world';
+
+$user = 'some-user';
+
+printf('Hello %s', $user);
+
 ?>
